@@ -3540,7 +3540,7 @@ void parseArg(int argc, char *argv[], Params &params) {
 		continue;
 	}
 
-			if (strcmp(argv[cnt], "-fconst") == 0) {
+			if (strcmp(argv[cnt], "-fconst") == 0 || strcmp(argv[cnt], "--fconst") == 0) {
 				cnt++;
 				if (cnt >= argc)
 					throw "Use -fconst <const_pattern_frequencies>";
@@ -5979,7 +5979,7 @@ void usage_alisim(){
     << "  --num-alignments NUM       Set the number of output datasets" << endl
     << "  --seqtype STRING           BIN, DNA, AA, CODON, MORPH{NUM_STATES} (default: auto-detect)," << endl
     << "                             for morphological data use 0<NUM_STATES<=32" << endl
-    << "  --m MODEL_STRING           Specify the evolutionary model. See Manual for more detail" << endl
+    << "  -m MODEL_STRING            Specify the evolutionary model. See Manual for more detail" << endl
     << "  --mdef FILE                Name of a NEXUS model file to define new models (see Manual)" << endl
     << "  --fundi TAXA_LIST,RHO      Specify a list of taxa and Rho (FunDi weight) for FunDi model" << endl
     << "  --indel INS,DEL            Set the insertion and deletion rate of the indel model" << endl
@@ -5999,7 +5999,7 @@ void usage_alisim(){
     << "                             to mimic the site-specific rates of the input alignment" << endl
     << "                             when using a rate heterogeneity model (see Manual)" << endl
     << "  -t RANDOM{MODEL,NUM_TAXA}  Specify the model and the number of taxa to generate a random tree" << endl
-    << "  -rlen MIN MEAN MAX         Specify three numbers: minimum, mean and maximum branch lengths" << endl
+    << "  --rlen MIN MEAN MAX        Specify three numbers: minimum, mean and maximum branch lengths" << endl
     << "                             when generating a random tree" << endl
     << "  -p FILE                    NEXUS/RAxML partition file" << endl
     << "                             to specify edge-linked proportional partition model" << endl
@@ -6038,7 +6038,7 @@ void usage_iqtree(char* argv[], bool full_command) {
     << "  -v, --verbose        Verbose mode, printing more messages to screen" << endl
     << "  -V, --version        Display version number" << endl
     << "  --quiet              Quiet mode, suppress printing to screen (stdout)" << endl
-    << "  -fconst f1,..,fN     Add constant patterns into alignment (N=NUM_STATES)" << endl
+    << "  --fconst f1,..,fN    Add constant patterns into alignment (N=NUM_STATES)" << endl
     << "  --epsilon NUM        Likelihood epsilon for parameter estimate (default 0.01)" << endl
 #ifdef _OPENMP
     << "  -T NUM|AUTO          No. cores/threads or AUTO-detect (default: 1)" << endl
