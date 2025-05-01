@@ -5976,15 +5976,15 @@ void usage_alisim(){
     << "  --alisim OUTPUT_ALIGNMENT  Activate AliSim and specify the output alignment filename" << endl
     << "  -t TREE_FILE               Set the input tree file name" << endl
     << "  --length LENGTH            Set the length of the root sequence" << endl
-    << "  --num-alignments NUMBER    Set the number of output datasets" << endl
+    << "  --num-alignments NUM       Set the number of output datasets" << endl
     << "  --seqtype STRING           BIN, DNA, AA, CODON, MORPH{NUM_STATES} (default: auto-detect)," << endl
     << "                             for morphological data use 0<NUM_STATES<=32" << endl
     << "  --m MODEL_STRING           Specify the evolutionary model. See Manual for more detail" << endl
     << "  --mdef FILE                Name of a NEXUS model file to define new models (see Manual)" << endl
     << "  --fundi TAXA_LIST,RHO      Specify a list of taxa and Rho (FunDi weight) for FunDi model" << endl
-    << "  --indel <INS>,<DEL>        Set the insertion and deletion rate of the indel model" << endl
+    << "  --indel INS,DEL            Set the insertion and deletion rate of the indel model" << endl
     << "                             relative to the substitution rate" << endl
-    << "  --indel-size <INS_DIS>,<DEL_DIS>" << endl
+    << "  --indel-size INS_DIS,DEL_DIS" << endl
     << "                             Set the insertion and deletion size distributions" << endl
     << "  --sub-level-mixture        Enable the feature to simulate substitution-level mixture model" << endl
     << "  --no-unaligned             Disable outputing a file of unaligned sequences" << endl
@@ -6028,7 +6028,7 @@ void usage_iqtree(char* argv[], bool full_command) {
     << "  -s FILE[,...,FILE]   PHYLIP/FASTA/NEXUS/CLUSTAL/MSF alignment file(s)" << endl
     << "  -s DIR               Directory of alignment files" << endl
     << "  --seqtype STRING     BIN, DNA, AA, NT2AA, CODON, MORPH (default: auto-detect)" << endl
-    << "  -t FILE|PARS|RAND    Starting tree (default: 99 parsimony and 1 RapidNJ)" << endl
+    << "  -t FILE|PARS|RAND    Starting tree (default: 99 parsimony and 1 RapidNJ trees)" << endl
     << "  -o TAX[,...,TAX]     Outgroup taxon (list) for writing .treefile" << endl
     << "  --prefix STRING      Prefix for all output files (default: aln/partition)" << endl
     << "  --seed NUM           Random seed number, normally used for debugging purpose" << endl
