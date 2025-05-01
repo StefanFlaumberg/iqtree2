@@ -1064,18 +1064,20 @@ public:
 		should be passed as a NULL pointer,
 		will be allocated with the size of num_patterns * num_states
 	 @param[out] ptn_cat (optional) the best-fitting mixture component per pattern
+	 @param[out] ptn_pp (optional) PP of the best-fitting mixture component per pattern
 	 @param[out] ncat (optional) the number of mixture components
 	*/
-	void computePatternStateFreq(double* &all_ptn_state_freq, IntVector *ptn_cat = NULL, int *ncat = NULL);
+	void computePatternStateFreq(double* &all_ptn_state_freq, IntVector *ptn_cat = NULL, DoubleVector *ptn_pp = NULL, int *ncat = NULL);
 
 	/**
 	 compute rates for each pattern (for site-specific models and -wsr option)
 	 @param[out] ptn_rate rate scaler per pattern,
 		should be passed as an empty vector
  	 @param[out] ptn_cat (optional) the best-fitting rate category per pattern
+	 @param[out] ptn_pp (optional) PP of the best-fitting rate category per pattern
 	 @param[out] ncat (optional) the number of rate categories
 	*/
-	void computePatternRate(DoubleVector &ptn_rate, IntVector *ptn_cat = NULL, int *ncat = NULL);
+	void computePatternRate(DoubleVector &ptn_rate, IntVector *ptn_cat = NULL, DoubleVector *ptn_pp = NULL, int *ncat = NULL);
 
     /****************************************************************************
             ancestral sequence reconstruction
@@ -2244,12 +2246,12 @@ public:
     void forceConvertingToUnrooted();
 
 	/**
-	 write site frequencies to a file in the following format:
+	 write site state frequencies to a file in the following format:
 	 1	freq(A)_1	freq(R)_1	...
 	 2	freq(A)_2	freq(R)_2	...
 	 ...
 	 This function should be used by -wsf option
-	 @param out output stream to write rates
+	 @param out output stream to write freqs
 	*/
 	virtual void writeSiteFreqs(ostream &out, int partid = -1);
 
