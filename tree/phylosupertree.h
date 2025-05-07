@@ -441,12 +441,12 @@ public:
     virtual void endMarginalAncestralState(bool orig_kernel_nonrev, double* &ptn_ancestral_prob, int* &ptn_ancestral_seq);
 
 	/**
-	 write site frequencies to a file in the following format:
+	 write site state frequencies to a file in the following format:
 	 1      freq(A)_1       freq(R)_1       ...
 	 2      freq(A)_2       freq(R)_2       ...
 	 ...
 	 This function should be used by -wsf option
-	 @param out output stream to write rates
+	 @param out output stream to write freqs
 	*/
 	virtual void writeSiteFreqs(ostream &out, int partid = -1);
 

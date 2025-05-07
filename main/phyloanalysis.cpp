@@ -1870,7 +1870,7 @@ void exportAliSimCMD(Params &params, IQTree &tree, ostream &out)
     out << "ALISIM COMMAND" << endl;
     out << "--------------" << endl << endl;
 
-    string more_info = "For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim";
+    string more_info = "For more information on using AliSim, please visit: http://www.iqtree.org/doc/AliSim";
 
     /** unsupported model message */
     if (tree.getModel()->isSiteSpecificModel() || tree.getModel()->isMixture() || tree.getModel()->isLieMarkov() || tree.getRate()->isHeterotachy() || tree.aln->seq_type == SEQ_CODON)
